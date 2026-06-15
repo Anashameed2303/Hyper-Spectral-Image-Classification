@@ -1,12 +1,3 @@
-/* =============================================
-   HyperSpec Classifier — Login Page Styles
-   css/login.css
-
-   Loaded in addition to style.css.
-   Only contains rules specific to login.html —
-   does not modify or override the main site styles.
-   ============================================= */
-
 .login-body {
   display: flex;
   flex-direction: column;
