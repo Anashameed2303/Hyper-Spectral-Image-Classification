@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HyperSpec Classifier — Login</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/login.css" />
+</head>
+<body class="login-body">
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="logo">
+      <div class="logo-dot"></div>
+      HyperSpec Classifier
+    </div>
+    <nav>
+      <a href="index.html">Map Viewer</a>
+      <a href="index.html#comparison-section">Compare</a>
+      <a href="index.html#legend-section">Legend</a>
+      <a href="index.html#about-section">About</a>
+    </nav>
+  </header>
+
+  <!-- ===== LOGIN / SIGNUP CARD ===== -->
+  <main class="login-main">
+    <div class="login-card fade-up d1">
+
+      <div class="login-badge">
+        <span>●</span>&nbsp;Account Access
+      </div>
+
+      <!-- Tabs: Login / Sign Up -->
+      <div class="auth-tabs">
+        <button class="auth-tab active" id="tab-login" onclick="switchTab('login')">Log In</button>
+        <button class="auth-tab" id="tab-signup" onclick="switchTab('signup')">Sign Up</button>
+      </div>
+
+      <!-- LOGIN FORM -->
+      <form id="login-form" class="auth-form active" onsubmit="handleLogin(event)">
+        <h1 class="auth-title">Welcome back</h1>
+        <p class="auth-subtitle">Log in to access your classification dashboard.</p>
+
+        <label class="field-label" for="login-email">Email</label>
+        <input class="field-input" type="email" id="login-email" placeholder="you@example.com" required />
+
+        <label class="field-label" for="login-password">Password</label>
+        <input class="field-input" type="password" id="login-password" placeholder="Enter your password" required />
+
+        <button type="submit" class="auth-btn" id="login-btn">Log In</button>
+
+        <div class="auth-message" id="login-message"></div>
+      </form>
+
+      <!-- SIGNUP FORM -->
+      <form id="signup-form" class="auth-form" onsubmit="handleSignup(event)">
+        <h1 class="auth-title">Create an account</h1>
+        <p class="auth-subtitle">Sign up to save and revisit your classification results.</p>
+
+        <label class="field-label" for="signup-name">Full Name</label>
+        <input class="field-input" type="text" id="signup-name" placeholder="Your full name" required />
+
+        <label class="field-label" for="signup-email">Email</label>
+        <input class="field-input" type="email" id="signup-email" placeholder="you@example.com" required />
+
+        <label class="field-label" for="signup-password">Password</label>
+        <input class="field-input" type="password" id="signup-password" placeholder="At least 6 characters" required minlength="6" />
+
+        <button type="submit" class="auth-btn" id="signup-btn">Create Account</button>
+
+        <div class="auth-message" id="signup-message"></div>
+      </form>
+
+      <!-- DASHBOARD (shown after successful login) -->
+      <div id="dashboard" class="dashboard">
+        <div class="dashboard-icon">✓</div>
+        <h1 class="auth-title">You're logged in</h1>
+        <p class="auth-subtitle" id="dashboard-welcome">Welcome back.</p>
+
+        <div class="dashboard-info">
+          <div class="dashboard-row">
+            <span class="dashboard-label">Email</span>
+            <span class="dashboard-value" id="dashboard-email">—</span>
+          </div>
+          <div class="dashboard-row">
+            <span class="dashboard-label">Account created</span>
+            <span class="dashboard-value" id="dashboard-created">—</span>
+          </div>
+          <div class="dashboard-row">
+            <span class="dashboard-label">User ID</span>
+            <span class="dashboard-value mono-small" id="dashboard-uid">—</span>
+          </div>
+        </div>
+
+        <a href="index.html" class="auth-btn auth-btn-link">Go to Classification Map Viewer</a>
+        <button class="auth-btn auth-btn-secondary" onclick="handleLogout()">Log Out</button>
+      </div>
+
+    </div>
+
+    <p class="login-footnote">
+      Account data is stored securely in Firebase Authentication and Cloud Firestore.
+    </p>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-left">
+      HyperSpec Classifier ·
+      <span>Land Cover Classification using Hyperspectral Image Data Analytics</span>
+    </div>
+    <div class="footer-right">
+      Anas Hameed · 22F23425 · Middle East College · 2026
+    </div>
+  </footer>
+
+  <!-- ===== FIREBASE SDKs (loaded from Google's CDN) ===== -->
+  <script type="module" src="js/firebase-config.js"></script>
+  <script type="module" src="js/auth.js"></script>
+
+</body>
+</html>

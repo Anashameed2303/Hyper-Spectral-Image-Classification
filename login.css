@@ -1,0 +1,248 @@
+/* =============================================
+   HyperSpec Classifier — Login Page Styles
+   css/login.css
+
+   Loaded in addition to style.css.
+   Only contains rules specific to login.html —
+   does not modify or override the main site styles.
+   ============================================= */
+
+.login-body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.login-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 64px 24px;
+}
+
+/* ---------- Login / Signup Card ---------- */
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 36px;
+  box-shadow: 0 0 60px rgba(0, 229, 255, 0.06);
+}
+
+.login-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid rgba(0, 229, 255, 0.25);
+  padding: 5px 12px;
+  border-radius: 2px;
+  margin-bottom: 24px;
+  background: rgba(0, 229, 255, 0.04);
+}
+
+/* ---------- Tabs ---------- */
+.auth-tabs {
+  display: flex;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 28px;
+}
+.auth-tab {
+  flex: 1;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  background: transparent;
+  border: none;
+  padding: 12px 0;
+  cursor: pointer;
+  transition: all 0.2s;
+  border-right: 1px solid var(--border);
+}
+.auth-tab:last-child { border-right: none; }
+.auth-tab:hover  { color: var(--text); background: var(--surface2); }
+.auth-tab.active { color: #000; background: var(--accent); }
+
+/* ---------- Forms ---------- */
+.auth-form {
+  display: none;
+  flex-direction: column;
+}
+.auth-form.active { display: flex; }
+
+.auth-title {
+  font-family: var(--mono);
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 6px;
+}
+.auth-subtitle {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.field-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+.field-input {
+  font-family: var(--sans);
+  font-size: 14px;
+  color: var(--text);
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 11px 14px;
+  margin-bottom: 18px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.field-input::placeholder { color: var(--muted); }
+.field-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(0, 229, 255, 0.1);
+}
+
+/* ---------- Buttons ---------- */
+.auth-btn {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #000;
+  background: var(--accent);
+  border: none;
+  border-radius: 4px;
+  padding: 13px 0;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.1s;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  margin-top: 4px;
+}
+.auth-btn:hover { opacity: 0.85; }
+.auth-btn:active { transform: scale(0.99); }
+.auth-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.auth-btn-link {
+  background: var(--accent);
+  color: #000;
+  margin-top: 20px;
+}
+.auth-btn-secondary {
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  margin-top: 10px;
+}
+.auth-btn-secondary:hover {
+  color: var(--text);
+  border-color: var(--muted);
+}
+
+/* ---------- Messages ---------- */
+.auth-message {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  margin-top: 14px;
+  min-height: 16px;
+  text-align: center;
+}
+.auth-message.error   { color: #f87171; }
+.auth-message.success { color: var(--accent3); }
+.auth-message.loading { color: var(--muted); }
+
+/* ---------- Dashboard (post-login view) ---------- */
+.dashboard {
+  display: none;
+  flex-direction: column;
+}
+.dashboard.active { display: flex; }
+
+.dashboard-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: var(--accent3);
+  font-size: 22px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.dashboard-info {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 16px;
+  margin: 8px 0 4px;
+}
+.dashboard-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+}
+.dashboard-row:last-child { border-bottom: none; }
+.dashboard-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.dashboard-value {
+  font-family: var(--sans);
+  font-size: 13px;
+  color: var(--text);
+  text-align: right;
+  word-break: break-all;
+}
+.mono-small {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--accent);
+}
+
+/* ---------- Footnote ---------- */
+.login-footnote {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 0.05em;
+  margin-top: 20px;
+  text-align: center;
+  max-width: 420px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 480px) {
+  .login-card { padding: 24px; }
+  .login-main { padding: 40px 16px; }
+}
