@@ -22,10 +22,10 @@ const METRICS = {
   },
   "cnn": {
     "name": "CNN",
-    "accuracy": 91.15,
-    "precision": 90.87,
-    "recall": 91.15,
-    "f1": 90.93,
+    "accuracy": 91.38,
+    "precision": 91.55,
+    "recall": 91.38,
+    "f1": 91.25,
     "kappa": 0.8987
   }
 };
